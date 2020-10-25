@@ -20,10 +20,6 @@
 <?php wp_body_open(); ?>
 
 <section class="ngl-home">
-<style>
-  .ngl-home .mejs-controls, .ngl-home .mejs-layers {
-    display: none !important; }
-</style>
 <?php 
   if ( is_active_sidebar( 'homepage-sidebar' ) ) {
     dynamic_sidebar( 'homepage-sidebar' );

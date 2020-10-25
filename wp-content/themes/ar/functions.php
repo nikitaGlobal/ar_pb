@@ -44,6 +44,7 @@ if ( ! function_exists( 'ar_setup' ) ) :
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
+		add_theme_support( 'menus' );
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -54,6 +55,7 @@ if ( ! function_exists( 'ar_setup' ) ) :
 				'switcher' => esc_html__( 'Language switcher', 'ar' ),
 			)
 		);
+
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -103,6 +105,7 @@ if ( ! function_exists( 'ar_setup' ) ) :
 		);
 	}
 endif;
+add_action( 'after_setup_theme', 'ar_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -525,10 +528,3 @@ function custom_titles( $title, $sep ) {
 
     return $title;
 }
-
- function remove_css_id_filter ($var) {
-     return is_array ($var)?  array_intersect ($var, array ('current-menu-item')): '';
- } 
- add_filter ('page_css_class', 'remove_css_id_filter', 100, 1);
- add_filter ('nav_menu_item_id', 'remove_css_id_filter', 100, 1);
- add_filter ('nav_menu_css_class', 'remove_css_id_filter', 100, 1);
