@@ -1,0 +1,105 @@
+@import '_vars'
+
+// Font Family (only ttf)
++ff("Montserrat", "Montserrat-Light", 300)
++ff("Montserrat", "Montserrat-Regular", 400)
++ff("Montserrat", "Montserrat-Bold", bold)
++ff("Montserrat", "Montserrat-Black", 900)
+
+
+
+// Base
+*,
+*::before,
+*::after
+	box-sizing: border-box
+	outline: none
+
+h1, h2, h3, h4, h5, h6, p, ul, button
+	margin: 0
+	padding: 0
+
+button, input
+	font-family: $font
+
+button
+	cursor: pointer
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	overflow-x: hidden
+	color: #fff
+	background: #000
+	font-family: $font
+	font-weight: 400
+	+mq(992)
+		font-size: 14px
+// ::selection
+// 	color: #fff
+// 	background-color: #b02786
+
+.img-wrap object, svg
+	transition: 400ms ease-in
+
+.items .item
+	&:hover
+		.img-wrap object
+			transform: scale(1.1)
+
+a
+	color: inherit
+	text-decoration: none
+
+.container
+	max-width: 1280px
+	padding: 0 15px
+	margin-right: auto
+	margin-left: auto
+	+mq(1280)
+		max-width: 992px
+	+mq(992)
+		max-width: 768px
+
+.flex
+	display: flex
+	flex-wrap: wrap
+
+.btn
+	text-decoration: none
+	border: none
+	padding: 0
+	background-color: transparent
+	color: inherit
+	cursor: pointer
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	transition: .25s
+
+	background-color: #1ce
+	color: #fff
+	padding: 10px 25px
+	border-radius: 50px
+	&--red
+		background-color: red
+	&:hover
+		opacity: .5
+
+
+
+h2
+	font-size: 28px
+	font-weight: 500
+	letter-spacing: .2em
+	text-align: center
+	margin-bottom: 40px
+	+mq(992)
+		font-size: 22px
+	+mq(768)
+		font-size: 20px
+		margin-bottom: 20px
+
+

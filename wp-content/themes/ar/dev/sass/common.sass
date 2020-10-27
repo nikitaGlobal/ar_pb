@@ -1,0 +1,578 @@
+@import 'libs/normalize'
+@import 'libs/slick'
+@import 'components/_mixins'
+@import 'components/_base'
+@import 'components/_vars'
+
+.ngl-home
+	.background__layer
+		position: fixed
+		top: 0
+		left: 0
+		background-image: url('../img/bg.jpg')
+		background-attachment: fixed
+	.mejs-controls, .mejs-layers
+		display: none !important
+	background-size: cover
+	background-position: center
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	padding-top: 0
+	overflow: hidden
+	video, section.homepage-widget-block
+		position: fixed
+		top: 50%
+		left: 50%
+		z-index: -1
+		width: 100%
+		transform: translate(-50%, -50%)
+		opacity: 0.5
+		+mq(1280)
+			display: none
+	+mq(1280)
+		background-image: url('../img/bg.jpg')
+		background-attachment: fixed
+		padding-top: 15px
+	+mq(768)
+		padding-top: 10px
+	.ngl-page
+		padding: 100px 0 30px
+		+mq(1280)
+			padding: 50px 0 10px
+		+mq(768)
+			padding: 0
+		.languages
+			padding: 25px 0
+			font-size: 0
+			text-align: right
+			+mq(768)
+				text-align: center
+			li
+				display: inline-block
+				&:not(:last-child)
+					margin-right: 10px
+					+mq(768)
+						margin-right: 5px
+				a
+					display: block
+					+size(36px)
+					display: flex
+					justify-content: center
+					align-items: center
+					border-radius: 50px
+					font-size: 16px
+					transition: .25s
+					+mq(768)
+						font-size: 10px
+						+size(30px)
+					&.active, &:hover
+						background-color: rgba(#fff, .2)
+		.ngl-content
+			display: flex
+			flex-wrap: wrap
+			.ngl-aside
+				width: 290px
+				border-right: 1px solid #fff
+				+mq(1280)
+					width: 100%
+					border-right: none
+					border-bottom: 1px solid #fff
+					margin-bottom: 40px
+				+mq(768)
+					border-bottom: 0
+					margin-bottom: 0
+				header.main-header
+					+mq(768)
+						margin-top: 20px
+					a.logo-wrap
+						display: flex
+						align-items: center
+						padding-top: 41px
+						+mq(1280)
+							justify-content: center
+							padding-top: 0
+							+mq(576)
+								transform: scale(0.8)
+						.img-wrap
+							img
+								width: 78px
+								display: block
+								+mq(768)
+									width: 70px
+						.text-wrap
+							padding-left: 17px
+							line-height: 1
+							letter-spacing: .04em
+							.title
+								font-size: 24px
+							.subtitle
+								font-size: 10px
+								+scale(.85)
+								transform-origin: 0 0
+								margin-top: 3px
+					nav
+						padding-left: 56px
+						padding-top: 55px
+						+mq(1280)
+							padding-top: 20px
+							padding-left: 0
+							padding-bottom: 14px
+						ul
+							+mq(1280)
+								display: flex
+								justify-content: space-between
+							+mq(768)
+								flex-direction: column
+								text-align: center
+							li
+								display: block
+								margin-bottom: 57px
+								+mq(1280)
+									display: inline-block
+									margin-bottom: 0
+								+mq(768)
+									&:not(:last-child)
+										margin-bottom: 5px
+								a
+									font-size: 16px
+									letter-spacing: .15em
+									position: relative
+									+mq(992)
+										font-size: 14px
+									+mq(768)
+										font-size: 13px
+									&:hover
+										&::before
+											opacity: 1
+											width: calc(100% + 2px)
+									&.active
+										&::after
+											+move(0)
+											opacity: 1
+										+mq(1280)
+											background-color: rgba(255, 255, 255, 0.1)
+											padding: 15px
+											border-bottom: 0
+											margin: 0
+										+mq(768)
+											padding: 5px
+									&::after
+										+pseudo
+										width: 100vw
+										left: calc(-100vw + 45px)
+										bottom: -5px
+										height: 1px
+										background-color: #fff
+										pointer-events: none
+										opacity: 0
+										+move(-50px, 0)
+										transition: .25s
+										+mq(1280)
+											width: 45px
+											left: 0
+										+mq(768)
+											bottom: -1px
+											width: 25px
+									&::before
+										+pseudo
+										left: -2px
+										top: -2px
+										bottom: -2px
+										background-color: rgba(#fff, .1)
+										width: 0
+										opacity: 0
+										transition: .25s
+			.ngl-slider-wrapper
+				width: calc(100% - 290px)
+				padding: 0 70px
+				display: flex
+				flex-wrap: wrap
+				align-items: center
+				position: relative
+				+mq(1280)
+					width: 100%
+					padding-top: 30px
+				+mq(992)
+					padding-left: 0
+					padding-right: 0
+				+mq(768)
+					padding-top: 0
+				a.next
+					position: absolute
+					top: calc(50% - 35px / 2)
+					right: 0
+					font-size: 0
+					border: none
+					background-color: transparent
+					transition: .25s
+					z-index: 10
+					+mq(992)
+						top: auto
+						bottom: -65px
+						right: calc(50% - 30px)
+					&:hover
+						+move(2px, 0)
+						+mq(992)
+							+move(0)
+				.ngl-slider-wrap
+					max-width: 100%
+					width: 100%
+					margin-top: -40px
+					.slide
+						+mq(768)
+							opacity: 1 !important
+							margin: 40px auto
+							padding: 0 30px
+						&.slide-1
+							text-align: center
+							margin-bottom: 60px
+							.logo-wrap
+								margin-bottom: 10px
+								img
+									display: inline-block
+									+mq(768)
+										width: 120px
+							h2
+							.items
+								padding-top: 20px
+								display: grid
+								grid-template-columns: 1fr 1fr 1fr
+								grid-gap: 20px
+								+mq(768)
+									padding: 5px 0
+									.item
+										p
+											margin-top: 15px
+								+mq(576)
+									grid-template-columns: 1fr
+								.item
+									.img-wrap
+										height: 63px
+										display: flex
+										justify-content: center
+										align-items: center
+									p
+										margin-top: 30px
+						&.slide-2
+							.items
+								margin-top: 60px
+								display: grid
+								grid-template-columns: 1fr 1fr
+								grid-gap: 40px 30px
+								+mq(768)
+									margin-top: 30px
+									p
+										margin-top: 15px
+								+mq(576)
+									grid-template-columns: 1fr
+								.item
+									.img-wrap
+										height: 53px
+										display: flex
+						&.slide-3
+							.items
+								padding-top: 20px
+								display: grid
+								grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+								+mq(768)
+									grid-template-columns: 1fr
+									grid-gap: 40px
+								.item
+									display: flex
+									justify-content: center
+									&:not(:last-child) .round
+										position: relative
+										&::after
+											+pseudo
+											+size(97px)
+											background-repeat: no-repeat
+											background-position: center
+									&:nth-child(1) .round
+										&::after
+											background-image: url('../img/round-arrow-1.svg')
+											bottom: calc(-100% + 15px)
+											left: 55px
+									&:nth-child(2) .round
+										&::after
+											background-image: url('../img/round-arrow-2.svg')
+											right: calc(-100% + 15px)
+											bottom: 48px
+									&:nth-child(3) .round
+										&::after
+											background-image: url('../img/round-arrow-3.svg')
+											top: calc(-100% + 15px)
+											left: 54px
+									&:nth-child(4) .round
+										&::after
+											background-image: url('../img/round-arrow-4.svg')
+											right: calc(-100% + 15px)
+											top: 49px
+									&:nth-child(1),
+									&:nth-child(3),
+									&:nth-child(5)
+										margin-top: 150px
+										+mq(768)
+											margin-top: 0
+											margin-right: 152px
+											.round
+												&::after
+													background-image: url('../img/round-arrow-1.svg')
+													top: calc(100% + 4px)
+													left: 55px
+									&:nth-child(2)
+										margin-top: 300px
+									&:nth-child(2),
+									&:nth-child(4)
+										+mq(768)
+											margin-top: 0
+											margin-left: 152px
+											.round
+												&::after
+													background-image: url('../img/round-arrow-4.svg')
+													top: calc(100% + 4px)
+													right: 55px
+													transform: rotate(90deg)
+									.round
+										+size(125px)
+										border: 2px solid #fff
+										border-radius: 50%
+										display: flex
+										align-items: center
+										justify-content: center
+										position: relative
+										.n
+											position: absolute
+											top: -40px
+											right: -10px
+											font-size: 85px
+											line-height: 1
+											font-weight: 900
+											opacity: .3
+										p
+											text-align: center
+						&.slide-4
+							+mq(768)
+								h4
+									text-align: center
+							h4 
+								font-weight: 300 !important
+								+mq(768)
+									font-size: 20px
+							ul
+								margin-top: 30px
+								li
+									display: block
+									padding-left: 60px
+									position: relative
+									&:not(:last-child)
+										margin-bottom: 25px
+									&::before
+										+pseudo
+										+size(42px)
+										left: 0
+										top: 2px
+										background-repeat: no-repeat
+										background-position: center
+										background-image: url('../img/ic-check.svg')
+						&.slide-5
+							text-align: center
+							h2
+								margin-bottom: 20px
+							.subtitle
+								margin-bottom: 20px
+								max-width: 645px
+								margin-left: auto
+								margin-right: auto
+							p
+								font-weight: 300
+							.items
+								display: grid
+								grid-template-columns: 1fr 1fr 1fr
+								grid-gap: 30px
+								margin-top: 60px
+								+mq(576)
+									grid-template-columns: 1fr
+								.item
+									padding: 0
+									.img-wrap
+										display: flex
+										justify-content: center
+										align-items: center
+										height: 80px
+									.title
+										margin-top: 30px
+									p
+										margin-top: 20px
+						&.slide-6
+							h2
+								margin-bottom: 20px
+							.subtitle
+								margin-bottom: 20px
+								margin-left: auto
+								margin-right: auto
+								text-align: center
+						&:last-child
+							margin-bottom: 0
+
+		.ngl-controlls
+			padding-left: 290px
+			font-size: 0
+			text-align: center
+			padding-top: 30px
+			padding-bottom: 100px
+			+mq(1280)
+				padding-left: 0
+			+mq(992)
+				padding-top: 90px
+				padding-bottom: 50px
+			li, a
+				display: inline-block
+				+size(12px)
+				background-color: #fff
+				border-radius: 50px
+				border: none
+				opacity: .4
+				transition: .25s
+				position: relative
+				&::after
+					+pseudo
+					width: 22px
+					height: 4px
+					background-color: #fff
+					border-radius: 50px
+					bottom: -11px
+					left: calc(50% - 22px / 2)
+					opacity: 0
+				&:not(:last-child)
+					margin-right: 20px
+				&:hover
+					opacity: 1
+				&.active, &.current-menu-item
+					opacity: 1
+					&::after
+						opacity: 1
+
+
+	.main-footer
+		margin-top: auto
+		background-color: rgba(#000, .5)
+		text-align: center
+		font-size: 12px
+		padding: 10px 0
+		a
+			text-decoration: underline
+
+
+
+
+.items .item
+	padding: 15px
+	+mq(992)
+		padding: 0
+	+mq(768)
+		padding: 0 !important
+
+.d-sm-visible
+	display: none
+.d-lg-visible
+	display: block
+	+mq(1280)
+		display: none
+@media screen and (max-width: 768px)
+	.d-sm-visible
+		display: block
+	.wp-block-column
+		margin: 0 auto 15px
+		&:last-child
+			margin-bottom: 0
+		padding: 15px 0
+	.wp-block-columns
+		margin-bottom: 0
+		padding: 0
+	.map-wrap
+		width: calc(100% + 90px)
+		position: relative
+		left: -45px
+		border-radius: 0
+
+.page-title
+	font-weight: 300
+.map-wrap
+	overflow: hidden
+	border-radius: 10px
+	iframe
+		display: block
+		width: 100%
+		height: 365px
+		border: none
+iframe
+	margin-top: 30px
+.entry-content
+	p
+		margin: 30px auto
+article.page
+	ul
+		text-align: left
+		list-style-type: square
+		padding-left: 2rem
+.nav-collapser 
+	button
+		display: none
+.nav-collapser ul
+	transition: 400ms ease-in
+@media screen and (max-width: 768px)
+	.fix
+		display: none
+	h2
+		font-weight: 400
+		font-size: 26px
+		margin-bottom: 15px
+	.nav-collapser
+		padding: 0 !important
+		button
+			position: fixed
+			display: flex
+			top: 20px
+			left: 45px
+			border: 0
+			border-radius: 5px
+			z-index: 2001
+			width: 25px
+			background: transparent
+			height: 50px
+			flex-direction: column
+			justify-content: center
+			span
+				display: block
+				height: 2px
+				width: 100%
+				position: relative
+				transition: 400ms ease-in
+				background: #fff
+				margin: 2px auto
+				transform: rotate(0)
+				top: 0
+			&.opened
+				span
+					top: 6px
+				span:nth-child(1)
+					transform: rotate(-45deg)
+				span:nth-child(2)
+					opacity: 0
+				span:nth-child(3)
+					transform: rotate(45deg)
+					top: -6px
+		ul
+			background: #000
+			width: 100%
+			left: 0
+			padding: 50px 0 !important
+			z-index: 2000
+			position: fixed
+			height: 300px
+			display: flex
+			justify-content: center
+			top: -300px
+			&.opened
+				top: 0 !important

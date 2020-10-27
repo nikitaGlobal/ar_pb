@@ -1,0 +1,39 @@
+// Media Query
+=mq($width)
+	@media only screen and (max-width : $width + px)
+		@content
+
+// Font Family
+=ff($fontName, $fontFamily, $fontWeight, $fontStyle: normal)
+	@font-face
+		font-family: $fontName
+		src: url("../fonts/#{$fontFamily}.ttf") format("truetype")
+		font-style: $fontStyle
+		font-weight: $fontWeight
+		font-display: swap
+
+// Pseudo
+=pseudo($content: '', $display: block, $position: absolute)
+	content: $content
+	display: $display
+	position: $position
+
+// Size
+=size($width, $height: $width)
+	width: $width
+	height: $height
+
+// Translate
+=move($x: 0, $y: 0)
+	transform: translate($x, $y)
+
+=scale($x: 0, $y: $x)
+	transform: scale($x, $y)
+
+=rotate($deg: 0)
+	transform: rotate($deg)
+
+// IE10+ Media
+=IE
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+		@content
