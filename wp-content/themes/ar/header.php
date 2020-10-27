@@ -18,7 +18,12 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-
+<style>
+  .hidden{
+    height: 0;
+    display: none !important;
+  }
+</style>
 <section class="ngl-home">
 <?php 
   if ( is_active_sidebar( 'homepage-sidebar' ) ) {
@@ -87,7 +92,7 @@
 				  </header>
 				</div> <!-- marker #1 | / ngl-aside -->
 
-        <div class="ngl-slider-wrapper">
+        <div class="ngl-slider-wrapper hidden">
         	<?php if (is_home()) : 
             $next = get_next_post(true, '', 'page');
           ?>
