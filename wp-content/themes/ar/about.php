@@ -9,9 +9,9 @@
       $query_for_page -> the_post();
       the_content();
       the_title('<h2>', '</h2>');
+      echo "<div class='items'>";
       wp_reset_postdata();
 
-      echo "<div class='items'>";
 
     $args = array( 
       'post_type' => 'about_company',
@@ -32,10 +32,19 @@
       </div> 
       <?php }
       wp_reset_postdata();
+      echo "</div>";
+      ?>
+
+        <div class="bordered">
+          <?php if(ICL_LANGUAGE_CODE=='ru'): 
+            echo(get_option( 'theme_contacttext_ru', false ));
+           else : 
+            echo(get_option( 'theme_contacttext_other', false ));
+            endif; ?>
+        </div>
+
+      <?
 } else {
   get_template_part( 'content', 'none' );
-}
-    ?>
-
-  </div>
+} ?>
 </div>

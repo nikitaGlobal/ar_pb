@@ -20,6 +20,8 @@
 	flex-direction: column
 	padding-top: 0
 	overflow: hidden
+	#mep_0
+		height: 100% !important
 	video, section.homepage-widget-block
 		position: fixed
 		top: 50%
@@ -28,9 +30,11 @@
 		width: 100%
 		transform: translate(-50%, -50%)
 		opacity: 0.5
-		+mq(1280)
+		object-fit: cover
+		height: 100% !important
+		+mq(768)
 			display: none
-	+mq(1280)
+	+mq(768)
 		background-image: url('../img/bg.jpg')
 		background-attachment: fixed
 		padding-top: 15px
@@ -43,10 +47,10 @@
 		+mq(768)
 			padding: 0
 		.languages
-			padding: 30px 0
+			padding: 30px 0 15px
 			font-size: 0
 			text-align: right
-			+mq(768)
+			+mq(1280)
 				text-align: center
 			li
 				display: inline-block
@@ -77,8 +81,8 @@
 				+mq(1280)
 					width: 100%
 					border-right: none
-					border-bottom: 1px solid #fff
-					margin-bottom: 40px
+					border-bottom: 0
+					margin-bottom: 0
 				+mq(768)
 					border-bottom: 0
 					margin-bottom: 0
@@ -192,7 +196,7 @@
 				position: relative
 				+mq(1280)
 					width: 100%
-					padding-top: 30px
+					padding-top: 0
 				+mq(992)
 					padding-left: 0
 					padding-right: 0
@@ -219,11 +223,18 @@
 					max-width: 100%
 					width: 100%
 					margin-top: -40px
+					+mq(1280)
+						margin-top: 0
 					.slide
-						+mq(768)
+						+mq(1280)
 							opacity: 1 !important
 							margin: 100px auto
 							padding: 0 30px
+						h2
+							letter-spacing: .2rem
+							font-weight: 500
+							+mq(768)
+								margin-bottom: 50px
 						&.slide-1
 							text-align: center
 							margin-bottom: 60px
@@ -240,6 +251,12 @@
 								display: grid
 								grid-template-columns: 1fr 1fr 1fr
 								grid-gap: 20px
+								+mq(1280)
+									padding-top: 0
+									.item
+										padding-top: 0
+										p
+											margin-top: 15px
 								.item
 									.img-wrap
 										height: 63px
@@ -262,6 +279,8 @@
 								display: grid
 								grid-template-columns: 1fr 1fr
 								grid-gap: 40px 30px
+								p
+									margin-top: 20px
 								+mq(768)
 									margin-top: 30px
 									p
@@ -411,10 +430,12 @@
 									+mq(768)
 										p
 											margin-top: 0
+											font-size: 15px
 										.title
 											font-weight: 500
-											margin-top: 30px
-											margin-bottom: 30px
+											margin-top: 45px
+											margin-bottom: 23px
+											font-size: 17px
 						&.slide-6
 							h2
 								margin-bottom: 20px
@@ -423,6 +444,15 @@
 								margin-left: auto
 								margin-right: auto
 								text-align: center
+							img
+								width: 100%
+								height: 500px
+								object-fit: cover
+								object-position: center
+								border-radius: 15px !important
+								margin: 30px auto
+							+mq(768)
+
 						&:last-child
 							margin-bottom: 0
 
@@ -491,8 +521,6 @@
 	+mq(1280)
 		display: none
 @media screen and (max-width: 768px)
-	.d-sm-visible
-		display: block
 	.wp-block-column
 		margin: 0 auto 15px
 		&:last-child
@@ -501,15 +529,22 @@
 	.wp-block-columns
 		margin-bottom: 0
 		padding: 0
-	.map-wrap
+	.map-wrap, .slide-6 img
 		width: calc(100% + 90px)
 		position: relative
 		left: -45px
 		border-radius: 0
-
+	.ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-6 img
+		width: calc(100% + 90px)
+		position: relative
+		top: 5px
+		height: 300px
+		margin-bottom: 0
+		border-bottom-left-radius: 0 !important
+		border-bottom-right-radius: 0 !important
 .page-title
 	font-weight: 300
-.map-wrap
+.map-wrap, .slide-6 img
 	overflow: hidden
 	border-radius: 10px
 	iframe
@@ -532,26 +567,30 @@ article.page
 		display: none
 .nav-collapser ul
 	transition: 400ms ease-in
-@media screen and (max-width: 768px)
-	.fix
+.bordered
+	border: 1px solid #fff
+	text-align: center
+	padding: 15px
+	margin: 30px auto
+	border-radius: 30px
+	+mq(768)
+		padding: 30px 15px
+@media screen and (max-width: 1280px)
+	.d-sm-visible
+		display: block
+	.fix	
 		display: none
-	h2
-		font-weight: 400
-		font-size: 26px
-		margin-bottom: 15px
 	.nav-collapser
 		padding: 0 !important
 		button
 			position: fixed
 			display: flex
-			top: 20px
+			top: 60px
 			left: 45px
 			border: 0
-			border-radius: 5px
 			z-index: 2001
 			width: 25px
 			background: transparent
-			height: 50px
 			flex-direction: column
 			justify-content: center
 			span
@@ -583,7 +622,20 @@ article.page
 			position: fixed
 			height: 300px
 			display: flex
-			justify-content: center
 			top: -300px
+			flex-direction: column
+			justify-content: center
+			text-align: center
 			&.opened
 				top: 0 !important
+@media screen and (max-width: 768px)
+	h2
+		font-weight: 400
+		font-size: 26px
+		margin-bottom: 15px
+	.nav-collapser
+		button
+			top: 40px
+@media screen and (max-width: 400px)
+	h1
+		font-size: 1.2rem

@@ -525,6 +525,8 @@ h2 {
     background-attachment: fixed; }
   .ngl-home .mejs-controls, .ngl-home .mejs-layers {
     display: none !important; }
+  .ngl-home #mep_0 {
+    height: 100% !important; }
   .ngl-home video, .ngl-home section.homepage-widget-block {
     position: fixed;
     top: 50%;
@@ -532,11 +534,13 @@ h2 {
     z-index: -1;
     width: 100%;
     transform: translate(-50%, -50%);
-    opacity: 0.5; }
-    @media only screen and (max-width: 1280px) {
+    opacity: 0.5;
+    object-fit: cover;
+    height: 100% !important; }
+    @media only screen and (max-width: 768px) {
       .ngl-home video, .ngl-home section.homepage-widget-block {
         display: none; } }
-  @media only screen and (max-width: 1280px) {
+  @media only screen and (max-width: 768px) {
     .ngl-home {
       background-image: url("../img/bg.jpg");
       background-attachment: fixed;
@@ -553,10 +557,10 @@ h2 {
       .ngl-home .ngl-page {
         padding: 0; } }
     .ngl-home .ngl-page .languages {
-      padding: 30px 0;
+      padding: 30px 0 15px;
       font-size: 0;
       text-align: right; }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 1280px) {
         .ngl-home .ngl-page .languages {
           text-align: center; } }
       .ngl-home .ngl-page .languages li {
@@ -593,8 +597,8 @@ h2 {
           .ngl-home .ngl-page .ngl-content .ngl-aside {
             width: 100%;
             border-right: none;
-            border-bottom: 1px solid #fff;
-            margin-bottom: 40px; } }
+            border-bottom: 0;
+            margin-bottom: 0; } }
         @media only screen and (max-width: 768px) {
           .ngl-home .ngl-page .ngl-content .ngl-aside {
             border-bottom: 0;
@@ -723,7 +727,7 @@ h2 {
         @media only screen and (max-width: 1280px) {
           .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper {
             width: 100%;
-            padding-top: 30px; } }
+            padding-top: 0; } }
         @media only screen and (max-width: 992px) {
           .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper {
             padding-left: 0;
@@ -754,11 +758,20 @@ h2 {
           max-width: 100%;
           width: 100%;
           margin-top: -40px; }
-          @media only screen and (max-width: 768px) {
+          @media only screen and (max-width: 1280px) {
+            .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap {
+              margin-top: 0; } }
+          @media only screen and (max-width: 1280px) {
             .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide {
               opacity: 1 !important;
               margin: 100px auto;
               padding: 0 30px; } }
+          .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide h2 {
+            letter-spacing: .2rem;
+            font-weight: 500; }
+            @media only screen and (max-width: 768px) {
+              .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide h2 {
+                margin-bottom: 50px; } }
           .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-1 {
             text-align: center;
             margin-bottom: 60px;
@@ -775,6 +788,13 @@ h2 {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
               grid-gap: 20px; }
+              @media only screen and (max-width: 1280px) {
+                .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-1 .items {
+                  padding-top: 0; }
+                  .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-1 .items .item {
+                    padding-top: 0; }
+                    .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-1 .items .item p {
+                      margin-top: 15px; } }
               .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-1 .items .item .img-wrap {
                 height: 63px;
                 display: flex;
@@ -797,6 +817,8 @@ h2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 40px 30px; }
+            .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-2 .items p {
+              margin-top: 20px; }
             @media only screen and (max-width: 768px) {
               .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-2 .items {
                 margin-top: 30px; }
@@ -946,11 +968,13 @@ h2 {
                   margin-top: 20px; }
                 @media only screen and (max-width: 768px) {
                   .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-5 .items .item p {
-                    margin-top: 0; }
+                    margin-top: 0;
+                    font-size: 15px; }
                   .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-5 .items .item .title {
                     font-weight: 500;
-                    margin-top: 30px;
-                    margin-bottom: 30px; } }
+                    margin-top: 45px;
+                    margin-bottom: 23px;
+                    font-size: 17px; } }
           .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-6 h2 {
             margin-bottom: 20px; }
           .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-6 .subtitle {
@@ -958,6 +982,13 @@ h2 {
             margin-left: auto;
             margin-right: auto;
             text-align: center; }
+          .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-6 img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px !important;
+            margin: 30px auto; }
           .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide:last-child {
             margin-bottom: 0; }
     .ngl-home .ngl-page .ngl-controlls {
@@ -1030,8 +1061,6 @@ h2 {
       display: none; } }
 
 @media screen and (max-width: 768px) {
-  .d-sm-visible {
-    display: block; }
   .wp-block-column {
     margin: 0 auto 15px;
     padding: 15px 0; }
@@ -1040,19 +1069,27 @@ h2 {
   .wp-block-columns {
     margin-bottom: 0;
     padding: 0; }
-  .map-wrap {
+  .map-wrap, .slide-6 img {
     width: calc(100% + 90px);
     position: relative;
     left: -45px;
-    border-radius: 0; } }
+    border-radius: 0; }
+  .ngl-home .ngl-page .ngl-content .ngl-slider-wrapper .ngl-slider-wrap .slide.slide-6 img {
+    width: calc(100% + 90px);
+    position: relative;
+    top: 5px;
+    height: 300px;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important; } }
 
 .page-title {
   font-weight: 300; }
 
-.map-wrap {
+.map-wrap, .slide-6 img {
   overflow: hidden;
   border-radius: 10px; }
-  .map-wrap iframe {
+  .map-wrap iframe, .slide-6 img iframe {
     display: block;
     width: 100%;
     height: 365px;
@@ -1075,26 +1112,32 @@ article.page ul {
 .nav-collapser ul {
   transition: 400ms ease-in; }
 
-@media screen and (max-width: 768px) {
+.bordered {
+  border: 1px solid #fff;
+  text-align: center;
+  padding: 15px;
+  margin: 30px auto;
+  border-radius: 30px; }
+  @media only screen and (max-width: 768px) {
+    .bordered {
+      padding: 30px 15px; } }
+
+@media screen and (max-width: 1280px) {
+  .d-sm-visible {
+    display: block; }
   .fix {
     display: none; }
-  h2 {
-    font-weight: 400;
-    font-size: 26px;
-    margin-bottom: 15px; }
   .nav-collapser {
     padding: 0 !important; }
     .nav-collapser button {
       position: fixed;
       display: flex;
-      top: 20px;
+      top: 60px;
       left: 45px;
       border: 0;
-      border-radius: 5px;
       z-index: 2001;
       width: 25px;
       background: transparent;
-      height: 50px;
       flex-direction: column;
       justify-content: center; }
       .nav-collapser button span {
@@ -1125,7 +1168,21 @@ article.page ul {
       position: fixed;
       height: 300px;
       display: flex;
+      top: -300px;
+      flex-direction: column;
       justify-content: center;
-      top: -300px; }
+      text-align: center; }
       .nav-collapser ul.opened {
         top: 0 !important; } }
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-weight: 400;
+    font-size: 26px;
+    margin-bottom: 15px; }
+  .nav-collapser button {
+    top: 40px; } }
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.2rem; } }

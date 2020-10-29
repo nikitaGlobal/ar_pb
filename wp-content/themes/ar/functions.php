@@ -528,3 +528,77 @@ function custom_titles( $title, $sep ) {
 
     return $title;
 }
+
+
+/*
+Короткий пример для использования Theme_Customization_API 
+http://casepress.org/kb/web/nastrojki-temy-wordpress-kak-dobavit-svoi-polya/
+*/
+/**
+ * Добавляет страницу настройки темы в админку Вордпресса
+ */
+function mytheme_customize_register( $wp_customize ) {
+/*
+Добавляем секцию в настройки темы
+*/
+$wp_customize->add_section(
+    // ID
+    'data_site_section',
+    // Arguments array
+    array(
+        'title' => 'Текст в рамке',
+        'capability' => 'edit_theme_options',
+        'description' => "Введите текст"
+    )
+);
+/*
+Добавляем поле контактных данных
+*/
+$wp_customize->add_setting(
+    // ID
+    'theme_contacttext_ru',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'theme_contacttext_control',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Текст на русском",
+        'section' => 'data_site_section',
+        // This last one must match setting ID from above
+        'settings' => 'theme_contacttext_ru'
+    )
+);
+
+/*
+Добавляем поле контактных данных
+*/
+$wp_customize->add_setting(
+    // ID
+    'theme_contacttext_other',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'theme_contacttext_control_other',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Текст на иностранном",
+        'section' => 'data_site_section',
+        // This last one must match setting ID from above
+        'settings' => 'theme_contacttext_other'
+    )
+);
+}
+add_action( 'customize_register', 'mytheme_customize_register' );
