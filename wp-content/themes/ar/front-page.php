@@ -11,12 +11,14 @@
           <img src="' . get_template_directory_uri() . '/img/logo.svg" alt=""/>
         </div>
       ');
+      echo "<h2>";
       if (ICL_LANGUAGE_CODE=='ru') { 
-        echo '<h2>ООО "ЛэдИнвест"</h2>'; 
+        echo(get_option( 'theme_logotype_text', false ));
       } else { 
-        echo '<h2>"LLC" LED INVEST</h2>'; 
+        echo(get_option( 'theme_logotype_text_en', false ));
       } 
     ?>
+      </h2>
     </div>
 
     <div class="items">

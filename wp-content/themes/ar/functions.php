@@ -543,6 +543,58 @@ function mytheme_customize_register( $wp_customize ) {
 */
 $wp_customize->add_section(
     // ID
+    'data_site_section_title',
+    // Arguments array
+    array(
+        'title' => 'Текст на первом слайде',
+        'capability' => 'edit_theme_options',
+        'description' => "Введите текст"
+    )
+);
+$wp_customize->add_setting(
+    // ID
+    'theme_logotype_text',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'theme_logo_text',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Текст на русском",
+        'section' => 'data_site_section_title',
+        // This last one must match setting ID from above
+        'settings' => 'theme_logotype_text'
+    )
+);
+$wp_customize->add_setting(
+    // ID
+    'theme_logotype_text_en',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'theme_logo_text_en',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Текст на иностранном",
+        'section' => 'data_site_section_title',
+        // This last one must match setting ID from above
+        'settings' => 'theme_logotype_text_en'
+    )
+);
+$wp_customize->add_section(
+    // ID
     'data_site_section',
     // Arguments array
     array(
@@ -561,6 +613,7 @@ $wp_customize->add_section(
         'description' => "Введите текст"
     )
 );
+
 /*
 Добавляем поле контактных данных
 */
