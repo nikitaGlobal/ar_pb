@@ -551,6 +551,16 @@ $wp_customize->add_section(
         'description' => "Введите текст"
     )
 );
+$wp_customize->add_section(
+    // ID
+    'data_site_section_1',
+    // Arguments array
+    array(
+        'title' => 'Текст в футере',
+        'capability' => 'edit_theme_options',
+        'description' => "Введите текст"
+    )
+);
 /*
 Добавляем поле контактных данных
 */
@@ -598,6 +608,50 @@ $wp_customize->add_control(
         'section' => 'data_site_section',
         // This last one must match setting ID from above
         'settings' => 'theme_contacttext_other'
+    )
+);
+
+$wp_customize->add_setting(
+    // ID
+    'theme_footer_text_ru',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'theme_contacttext_control_footer',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Текст на русском",
+        'section' => 'data_site_section_1',
+        // This last one must match setting ID from above
+        'settings' => 'theme_footer_text_ru'
+    )
+);
+
+$wp_customize->add_setting(
+    // ID
+    'theme_footer_text_en',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'theme_contacttext_control_footer_en',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Текст на иностранном",
+        'section' => 'data_site_section_1',
+        // This last one must match setting ID from above
+        'settings' => 'theme_footer_text_en'
     )
 );
 }

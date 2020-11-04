@@ -39,12 +39,12 @@
     </div>
   	<footer class="main-footer">
   	  <div class="container">
-  	    <p>Copyright&copy; 2020 
-          <?php if(ICL_LANGUAGE_CODE=='ru'): ?>
-              ООО "ЛэдИнвест" | Все права защищены
-          <?php else : ?>
-              "LLC" LED INVEST | All rights reserved
-          <?php endif; ?>
+  	    <p>
+          <?php if(ICL_LANGUAGE_CODE=='ru'): 
+            echo(get_option( 'theme_footer_text_ru', false ));
+           else : 
+            echo(get_option( 'theme_footer_text_en', false ));
+            endif; ?>
         </p>
         <a href="<?php echo(get_page_link(pll_get_post(3))); ?>">
           
