@@ -55,8 +55,15 @@
 				  	<a data-slide-index="0" class="logo-wrap" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				      <div class="img-wrap"><img src="<?php echo(get_template_directory_uri()) ?>/img/logo.svg" alt=""/></div>
 				      <div class="text-wrap">
-				        <div class="title"><?php bloginfo( 'name' ); ?></div>
-				        <div class="subtitle"><?php bloginfo( 'description' ); ?></div>
+                <?php if(ICL_LANGUAGE_CODE=='ru'): 
+                  $site_name = 'site_name_1';
+                  $site_descr = 'site_descr_1';
+                 else : 
+                  $site_name = 'site_name_2';
+                  $site_descr = 'site_descr_2';
+                  endif; ?>
+				        <div class="title"><?php echo(get_option( $site_name, false )); ?></div>
+				        <div class="subtitle"><?php echo(get_option( $site_descr, false )); ?></div>
 				      </div>
 				    </a>
             <div class="d-sm-visible">

@@ -541,6 +541,90 @@ function mytheme_customize_register( $wp_customize ) {
 /*
 Добавляем секцию в настройки темы
 */
+$wp_customize->add_setting(
+    // ID
+    'site_name_1',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'side_name_1_control',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Название сайта на русском языке",
+        'section' => 'title_tagline',
+        // This last one must match setting ID from above
+        'settings' => 'site_name_1'
+    )
+);
+$wp_customize->add_setting(
+    // ID
+    'site_descr_1',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'site_descr_1_control',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Краткое описание на русском языке",
+        'section' => 'title_tagline',
+        // This last one must match setting ID from above
+        'settings' => 'site_descr_1'
+    )
+);
+$wp_customize->add_setting(
+    // ID
+    'site_name_2',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'side_name_2_control',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Название сайта на английском языке",
+        'section' => 'title_tagline',
+        // This last one must match setting ID from above
+        'settings' => 'site_name_2'
+    )
+);
+$wp_customize->add_setting(
+    // ID
+    'site_descr_2',
+    // Arguments array
+    array(
+        'default' => '',
+        'type' => 'option'
+    )
+);
+$wp_customize->add_control(
+    // ID
+    'site_descr_2_control',
+    // Arguments array
+    array(
+        'type' => 'text',
+        'label' => "Краткое описание на английском",
+        'section' => 'title_tagline',
+        // This last one must match setting ID from above
+        'settings' => 'site_descr_2'
+    )
+);
 $wp_customize->add_section(
     // ID
     'data_site_section_title',
