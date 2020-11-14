@@ -28,7 +28,6 @@
 <?php get_template_part('block_video');?>
     <div class="background__layer"></div>
     <?
-  }
 ?>
 
     <div class="ngl-page">
