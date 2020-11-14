@@ -1,6 +1,6 @@
 <?php
-if (file_exists('wp-config-local.php')) {
-	include 'wp-config-local.php';
+if (file_exists(dirname(__FILE__).'/wp-config-local.php')) {
+	include dirname(__FILE__).'/wp-config-local.php';
 } else {
     /**
      * The base configuration for WordPress
