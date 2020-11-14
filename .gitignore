@@ -7,3 +7,4 @@ node_modules/
 # ignore log files 
 *.log
 
+wp-config-local.php
