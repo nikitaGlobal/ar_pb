@@ -12,60 +12,57 @@
 ?>
           </div> <!-- / ngl-slider-wrapper -->
         </div> <!-- / ngl-content -->
-        <?php 
+        <?php
 
-          if (is_home()) {
+        if ( is_home() ) {
             ?>
             <nav class="ngl-controlls navigation pagination fix" role="navigation">
               <div class="nav-links">
-                <?php 
-                  wp_nav_menu( [
-                    'theme_location'  => 'controls',
-                    'menu'            => 'Slider controls', 
-                    'container'       => false, 
-                    'menu_class'      => 'nav-links', 
-                    'items_wrap'      => '%3$s',
-                    'depth'           => 0,
-                    'walker'          => '',
-                  ] );
-                 ?>
+              <?php
+                wp_nav_menu(
+                    [
+                        'theme_location' => 'controls',
+                        'menu'           => 'Slider controls',
+                        'container'      => false,
+                        'menu_class'     => 'nav-links',
+                        'items_wrap'     => '%3$s',
+                        'depth'          => 0,
+                        'walker'         => '',
+                    ]
+                );
+                ?>
               </div>
             </nav>
             <?php
-          }
+        }
 
-         ?>
+        ?>
       </div>
     </div>
-  	<footer class="main-footer">
-  	  <div class="container">
-  	    <p>
-          <?php if(ICL_LANGUAGE_CODE=='ru'): 
-            echo(get_option( 'theme_footer_text_ru', false ));
-           else : 
-            echo(get_option( 'theme_footer_text_en', false ));
-            endif; ?>
+    <footer class="main-footer">
+      <div class="container">
+        <p>
+          <?php
+            if (ICL_LANGUAGE_CODE == 'ru') {
+                echo get_option('theme_footer_text_ru', false);
+            } else {
+               echo get_option( 'theme_footer_text_en', false );
+            }
+            ?>
         </p>
-        <a href="<?php echo(get_page_link(pll_get_post(3))); ?>">
+        <a href="<?php echo get_page_link( pll_get_post( 3 ) ); ?>">
           
-          <?php if(ICL_LANGUAGE_CODE=='ru'): ?>
+          <?php if ( ICL_LANGUAGE_CODE == 'ru' ) { ?>
               Политика конфиденциальности и файлы cookie
-          <?php else : ?>
+          <?php } else { ?>
               Privacy policy & cookies
-          <?php endif; ?>
+          <?php } ?>
 
         </a>
-  	  </div>
-  	</footer>
+      </div>
+    </footer>
 </section>
 
 <?php wp_footer(); ?>
-
-<script>
-    var vid = document.querySelector('video.wp-video-shortcode');
-    vid.autoplay = true;
-    vid.load();
-    $('video').attr('loop', 'loop')
-</script>
 </body>
 </html>

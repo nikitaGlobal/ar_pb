@@ -13,9 +13,9 @@
       ');
       echo "<h2>";
       if (ICL_LANGUAGE_CODE=='ru') { 
-        echo(get_option( 'theme_logotype_text', false ));
+        echo get_option( 'theme_logotype_text', false );
       } else { 
-        echo(get_option( 'theme_logotype_text_en', false ));
+        echo get_option( 'theme_logotype_text_en', false );
       } 
     ?>
       </h2>
@@ -39,7 +39,7 @@
         <div class="item">
           <div class="img-wrap">
             <?php if(get_field('post_image')) : ?>
-              <object data="<?php echo(get_field('post_image')) ?>" type="image/svg+xml"></object>
+              <object data="<?php echo get_field('post_image'); ?>" type="image/svg+xml"></object>
             <?php ; endif; ?>
           </div>
           <?php the_title( '<p>', '</p>' ); ?>
