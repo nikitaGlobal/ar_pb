@@ -1,0 +1,76 @@
+# Translation of Plugins - NG-Mail2Telegram - Development (trunk) in Russian
+# This file is distributed under the same license as the Plugins - NG-Mail2Telegram - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-05-20 13:31:40+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - NG-Mail2Telegram - Development (trunk)\n"
+
+#: ng-mail2telegram.php:101
+msgid "Subscribed"
+msgstr "Вы подписаны"
+
+#: ng-mail2telegram.php:103
+msgid "Unknown command"
+msgstr "Неизвестная команда"
+
+#: ng-mail2telegram.php:102
+msgid "Please log in first"
+msgstr "Пожалуйста, ещё раз зайдите в систему."
+
+#: ng-mail2telegram.php:104
+msgid "Hello. Please follow this link to subscribe:"
+msgstr "Здравствуйте. Пожалуйста, перейдите по ссылке чтобы подписаться:"
+
+#: ng-mail2telegram.php:858
+msgid "<hr>"
+msgstr "<hr>"
+
+#: ng-mail2telegram.php:521
+msgid "Settings"
+msgstr "Настройки"
+
+#: ng-mail2telegram.php:69
+msgid "Message filter"
+msgstr "Фильтр сообщений"
+
+#: ng-mail2telegram.php:48
+msgid "NG WP Mail to telegram"
+msgstr "NG Отправка писем в Телеграм"
+
+#. Author URI of the plugin
+msgid "http://nikita.global"
+msgstr "http://nikita.global"
+
+#. Author of the plugin
+msgid "Nikita Menshutin"
+msgstr "Никита Меншутин"
+
+#. Description of the plugin
+msgid "Cross copy mail to telegram"
+msgstr "Копирует почту в телеграм-сообщения"
+
+#. Plugin Name of the plugin
+msgid "ng-mail2telegram"
+msgstr "ng-mail2telegram"
+
+#: ng-mail2telegram.php:385
+msgid "Broken link"
+msgstr "Неверная ссылка"
+
+#: ng-mail2telegram.php:636
+msgid "Testing bot"
+msgstr "Проверка бота"
+
+#: ng-mail2telegram.php:62
+msgid "init webhooks for this site"
+msgstr "обрабатывать веб-зацепы на этом сайте"
+
+#: ng-mail2telegram.php:54 ng-mail2telegram.php:55
+msgid "Bot token"
+msgstr "Ключ бота"
