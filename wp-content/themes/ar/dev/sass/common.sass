@@ -42,7 +42,7 @@
 		padding-top: 10px
 	.ngl-page
 		padding: 30px 0
-		+mq(1280)
+		+mq(1279)
 			padding: 50px 0 10px
 		+mq(768)
 			padding: 0
@@ -50,7 +50,7 @@
 			padding: 30px 0 50px
 			font-size: 0
 			text-align: right
-			+mq(1280)
+			+mq(1279)
 				padding-bottom: 30px
 				text-align: center
 			li
@@ -79,7 +79,7 @@
 			.ngl-aside
 				width: 290px
 				border-right: 1px solid #fff
-				+mq(1280)
+				+mq(1279)
 					width: 100%
 					border-right: none
 					border-bottom: 0
@@ -94,7 +94,7 @@
 						display: flex
 						align-items: center
 						padding-top: 41px
-						+mq(1280)
+						+mq(1279)
 							justify-content: center
 							padding-top: 0
 							+mq(576)
@@ -119,12 +119,12 @@
 					nav
 						padding-left: 56px
 						padding-top: 55px
-						+mq(1280)
+						+mq(1279)
 							padding-top: 20px
 							padding-left: 0
 							padding-bottom: 14px
 						ul
-							+mq(1280)
+							+mq(1279)
 								display: flex
 								justify-content: space-between
 							+mq(768)
@@ -133,7 +133,7 @@
 							li
 								display: block
 								margin-bottom: 57px
-								+mq(1280)
+								+mq(1279)
 									display: inline-block
 									margin-bottom: 0
 								+mq(768)
@@ -155,7 +155,7 @@
 										&::after
 											+move(0)
 											opacity: 1
-										+mq(1280)
+										+mq(1279)
 											background-color: rgba(255, 255, 255, 0.1)
 											padding: 15px
 											border-bottom: 0
@@ -173,7 +173,7 @@
 										opacity: 0
 										+move(-50px, 0)
 										transition: .25s
-										+mq(1280)
+										+mq(1279)
 											width: 45px
 											left: 0
 										+mq(768)
@@ -195,7 +195,7 @@
 				flex-wrap: wrap
 				align-items: center
 				position: relative
-				+mq(1280)
+				+mq(1279)
 					width: 100%
 					padding-top: 0
 				+mq(992)
@@ -224,11 +224,11 @@
 					max-width: 100%
 					width: 100%
 					margin-top: -40px
-					+mq(1280)
+					+mq(1279)
 						margin-top: 0
 					.slide
 						padding-top: 50px
-						+mq(1280)
+						+mq(1279)
 							margin: 100px auto
 							padding: 0 30px
 						h2
@@ -252,7 +252,7 @@
 								display: grid
 								grid-template-columns: 1fr 1fr 1fr
 								grid-gap: 20px
-								+mq(1280)
+								+mq(1279)
 									padding-top: 0
 									.item
 										padding-top: 0
@@ -463,7 +463,7 @@
 			text-align: center
 			padding-top: 30px
 			padding-bottom: 100px
-			+mq(1280)
+			+mq(1279)
 				padding-left: 0
 			+mq(992)
 				padding-top: 90px
@@ -519,7 +519,7 @@
 	display: none
 .d-lg-visible
 	display: block
-	+mq(1280)
+	+mq(1279)
 		display: none
 @media screen and (max-width: 768px)
 	.wp-block-column
@@ -576,8 +576,14 @@ article.page
 	border-radius: 30px
 	+mq(768)
 		padding: 30px 15px
-@media screen and (max-width: 1280px)
+@media screen and (max-width: 1279px)
 	.d-sm-visible
+		display: block
+	.fix
+		display: none
+	.fix.next
+		display: block
+	.fix.pagination
 		display: block
 	.nav-collapser
 		padding: 0 !important
